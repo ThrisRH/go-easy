@@ -1,0 +1,12 @@
+app:
+  name: "GoEasy"
+  debug: true
+db:
+  path: "./storage/database/goeasy-dev.db"
+logger:
+  logLevel: "debug"
+  fileName: "./storage/logs/dev.log"
+  maxBackups: 3
+  maxSize: 10
+  maxAge: 28
+  compress: true
