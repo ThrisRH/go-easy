@@ -1,0 +1,10 @@
+{"level":"INFO","Time":"2026-05-20T02:01:14.007+0700","caller":"bootstrap/run.go:12","msg":"Config Log Ok","OK":"success"}
+{"level":"INFO","Time":"2026-05-20T02:01:14.008+0700","caller":"bootstrap/run.go:15","msg":"InitMySQL Ok","OK":"success"}
+{"level":"INFO","Time":"2026-05-20T02:02:52.636+0700","caller":"bootstrap/run.go:12","msg":"Config Log Ok","OK":"success"}
+{"level":"INFO","Time":"2026-05-20T02:02:52.636+0700","caller":"bootstrap/run.go:15","msg":"InitMySQL Ok","OK":"success"}
+{"level":"INFO","Time":"2026-05-20T02:04:43.369+0700","caller":"bootstrap/run.go:12","msg":"Config Log Ok","OK":"success"}
+{"level":"INFO","Time":"2026-05-20T02:04:43.369+0700","caller":"bootstrap/run.go:15","msg":"InitMySQL Ok","OK":"success"}
+{"level":"INFO","Time":"2026-05-20T02:04:53.248+0700","caller":"bootstrap/run.go:12","msg":"Config Log Ok","OK":"success"}
+{"level":"INFO","Time":"2026-05-20T02:04:53.249+0700","caller":"bootstrap/run.go:15","msg":"InitMySQL Ok","OK":"success"}
+{"level":"INFO","Time":"2026-05-20T02:05:10.522+0700","caller":"bootstrap/run.go:12","msg":"Config Log Ok","OK":"success"}
+{"level":"INFO","Time":"2026-05-20T02:05:10.523+0700","caller":"bootstrap/run.go:15","msg":"InitMySQL Ok","OK":"success"}
