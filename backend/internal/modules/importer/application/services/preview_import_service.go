@@ -1,6 +1,7 @@
 package services
 
 import (
+	"errors"
 	"goeasy/internal/modules/importer/dto"
 	"goeasy/internal/modules/importer/infrastructure/excel"
 )
@@ -21,7 +22,41 @@ func (pis *PreviewImportService) PreviewImport(path string) (*dto.ImportPreview,
 	sheets := reader.ReadSheets()
 
 	if len(sheets) == 0 {
+		return nil, errors.New("file excel không chứa trang (sheet) nào")
+	}
+
+	sheetName := sheets[0]
+
+	rows, err := reader.ReadRows(sheetName)
+	if err != nil {
 		return nil, err
+	}
+
+	previewLimit := 20
+
+	if len(rows) > previewLimit {
+		rows = rows[:previewLimit]
+	}
+
+	return &dto.ImportPreview{
+		Sheets:    sheets,
+		Rows:      rows,
+		TotalRows: len(rows),
+		SheetName: sheetName,
+	}, nil
+}
+
+func (pis *PreviewImportService) PreviewImportFromBytes(data []byte) (*dto.ImportPreview, error) {
+	reader, err := excel.NewReaderFromBytes(data)
+	if err != nil {
+		return nil, err
+	}
+	defer reader.Close()
+
+	sheets := reader.ReadSheets()
+
+	if len(sheets) == 0 {
+		return nil, errors.New("file excel không chứa trang (sheet) nào")
 	}
 
 	sheetName := sheets[0]

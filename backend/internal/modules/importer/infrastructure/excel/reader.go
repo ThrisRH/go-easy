@@ -1,6 +1,7 @@
 package excel
 
 import (
+	"bytes"
 	"fmt"
 
 	"github.com/xuri/excelize/v2"
@@ -14,6 +15,15 @@ func NewReader(path string) (*Reader, error) {
 	f, err := excelize.OpenFile(path)
 	if err != nil {
 		return nil, fmt.Errorf("Failed to open Excel file: %s", err.Error())
+	}
+
+	return &Reader{file: f}, nil
+}
+
+func NewReaderFromBytes(data []byte) (*Reader, error) {
+	f, err := excelize.OpenReader(bytes.NewReader(data))
+	if err != nil {
+		return nil, fmt.Errorf("Failed to open Excel file from bytes: %s", err.Error())
 	}
 
 	return &Reader{file: f}, nil
